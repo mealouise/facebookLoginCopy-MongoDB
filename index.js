@@ -26,7 +26,6 @@ app.set('view engine', '.hbs');
 
 app.use('/', userRouter);
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log("you are listening on port 3000")
+app.listen(3004, () => {
+    console.log("you are listening on port 3004")
 })
