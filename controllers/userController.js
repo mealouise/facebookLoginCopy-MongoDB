@@ -65,7 +65,12 @@ exports.postLogin =  async(req,res) => {
     return; // return stops rest of the function from working
     }
     // let user = await User.findOne({userName:userName, password:password});
-    let user = await User.validateUser(req.body); // will either be false i.e no user or the document
+
+    try {
+        var user = await User.validateUser(req.body); // will either be false i.e no user or the document 
+    } catch(e) {
+        return res.render('login', {err: e});
+    }
 
     //if user is anything other than null, undefined its successful
     if (user) { // success user is return so render the profile page
