@@ -1,14 +1,19 @@
-<h1>Login</h1>
-<div>
-    <h1 class="login-header">facebook</h1>
-<h2>Facebook helps you connect and share with the people in your life.</h2>
+
+<div class="login-container">
+    <div>
+        <h1 class="login-header">facebook</h1>
+    <h2 class="login-subheading">Facebook helps you connect and share with the people in your life.</h2>
+    </div>
+    <div>
+        <form class="login-form" action='/login' method="post">
+        <label for="userName">User name</label><br>
+        <input type="text" name="userName"><br>
+        <label for="password">Password</label><br>
+        <input type="password" name="password"><br>
+        {{!-- <input type="submit" value="Submit"> --}}
+        <button class="login" type="Submit" value="Submit">Log In</button>
+        </form>
+    </div>
 </div>
-<div>
-    <form action='/login' method="post">
-    <label for="email">Email address</label><br>
-    <input type="email" name="email"><br>
-    <label for="password">Password</label><br>
-    <input type="password" name="password"><br>
-    <input type="submit" value="Submit">
-</form>
-</div>
+
+<p>{{err}}</p>
